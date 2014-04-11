@@ -55,6 +55,7 @@ class UnidadCaractController extends BaseController {
         /**
         * Crear el Nuevo Tipo de Unidad
         */
+        
         public function actualizarCaract()
         {
             $data = Input::all();
