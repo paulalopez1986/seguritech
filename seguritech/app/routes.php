@@ -1,17 +1,16 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
+//1.- Muestra pagina inicial para la busqueda de una unidad por su Id
 Route::get('/', function()
 {
-	return View::make('hello');
+    return View::make('unidades.unidad');
 });
+
+//2.1.- Muestra detalle de la unidad encontrada
+//Route::post('unidades/buscar', 'UnidadesController@buscarUnidad');
+
+//2.2.- Muestra el detalle de las caracteristicas de la unidad indicada
+Route::post('unidades/detalle', 'UnidadCaractController@mostrarCaract');
+
+//3.- Actualiza las caracteristicas de la unidad encontrada
+Route::post('unidades/actualizar', 'UnidadCaractController@actualizarCaract');
